@@ -13,15 +13,16 @@ class WeatherMore extends React.Component {
         </button>
         <div className={`weatherMore ${showMore ? 'showWeatherMore' : ''}`}>
           {data.map((d, i) => (
-            <div className="weatherNow" key={i}>
-              <div className="nowIcon">
+            <div className="weatherContainer" key={i}>
+              <div className="moreIcon">
                 <WeatherIcons icon={d.weather[0].icon} />
               </div>
-              <div className="nowDescription">
-                <h3>{d.main.temp}&#176;C</h3>
-                <p>Feel Like: {d.main.feels_like}&#176;C</p>
-                <p>{d.weather[0].description}</p>
+              <div className="moreDescription">
                 <p>{d.dt_txt}</p>
+                <p>
+                  T: {d.main.temp}&#176;C, F: {d.main.feels_like}&#176;C
+                </p>
+                <p>{d.weather[0].description}</p>
               </div>
             </div>
           ))}

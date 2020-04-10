@@ -1,3 +1,4 @@
+@import-normalize;
 * {
 	box-sizing: border-box;
 }
@@ -5,28 +6,30 @@ body {
 	padding: 0;
 	margin: 0;
 	scroll-behavior: smooth;
-}
-.weatherMore {
-	display: flex;
-	flex-wrap: wrap;
-	overflow: hidden;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 .svg-container {
 	max-width: 500px;
 	max-height: 500px;
+	width: auto;
+	height: auto;
+	svg {
+		width: 100%;
+		height: 100%;
+	}
 }
 
 .sun {
-	animation: rasing 3s linear infinite;
+	animation: rasing 3s linear infinite alternate;
 }
 
 @keyframes rasing {
 	from {
-		r: 0;
+		r: 15%;
 	}
 	to {
-		r: 73.012;
+		r: 20%;
 	}
 }
 .rains {
@@ -171,45 +174,103 @@ header {
 // weather
 .weather {
 	// max-width: 900px;
-	padding: 20px;
+	padding: 0 20px;
 	display: grid;
 	grid-template-areas:
 		"city "
 		"weatherNow"
 		"more ";
+	grid-template-rows: 150px 500px auto;
 	.city {
 		grid-area: city;
 		justify-self: center;
+		font-size: 400%;
+		h3 {
+			margin: 0;
+		}
 	}
 
 	.weatherNow {
-		// height: 80vh;
-		display: grid;
-		grid-template-areas: "icon description";
-		grid-template-columns: 1fr 1fr;
+		display: flex;
+		// grid-template-areas: "icon description";
+		// grid-template-columns: ifr;
 		justify-content: center;
+
 		.nowIcon {
-			grid-area: icon;
-			justify-self: right;
+			// grid-area: icon;
+			flex-basis: 50%;
+			height: 100%;
+			width: auto;
+			display: flex;
+			justify-content: right;
 		}
 		.nowDescription {
-			grid-area: description;
-			justify-self: left;
+			// grid-area: description;
+			flex-basis: 50%;
 			align-self: center;
-			text-align: center;
+			text-align: left;
+
 			h3 {
-				font-size: 200%;
+				font-size: 800%;
+				margin: 0;
+			}
+			p {
+				&:first-child {
+					color: grey;
+					font-size: 80%;
+				}
+				&:last-child {
+					text-transform: capitalize;
+				}
 			}
 		}
 	}
+
 	.weatherMore {
-		grid-area: more;
+		display: none;
+
+		height: 0;
+		opacity: 0;
+		transition: all 0.2s ease-in-out;
+		&.showWeatherMore {
+			display: flex;
+			justify-content: center;
+			grid-area: more;
+			flex-wrap: wrap;
+			height: auto;
+			opacity: 1;
+		}
+		.weatherContainer {
+			min-width: 250px;
+			max-width: 300px;
+			text-align: left;
+			font-size: 80%;
+			display: flex;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+			margin: 5px;
+			border-radius: 5px;
+			transition: all 0.2s ease-in-out;
+
+			&:hover {
+				box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.2);
+			}
+			.moreIcon {
+			}
+			.moreDescription {
+				p {
+					&:first-child {
+						color: grey;
+						font-size: 80%;
+					}
+					&:last-child {
+						text-transform: capitalize;
+					}
+				}
+			}
+			.svg-container {
+				width: 100px;
+				height: 100px;
+			}
+		}
 	}
-}
-// weatherMore
-.weatherMore {
-	height: 0;
-}
-.showWeatherMore {
-	height: auto;
 }

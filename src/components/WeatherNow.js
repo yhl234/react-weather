@@ -19,10 +19,10 @@ class WeatherNow extends React.Component {
           <WeatherIcons icon={icon} />
         </div>
         <div className="nowDescription">
+          <p className="dateTime">{dateTime}</p>
           <h3>{temp}&#176;C</h3>
           <p>Feel Like: {feelsLike}&#176;C</p>
           <p>{description}</p>
-          <p>{dateTime}</p>
         </div>
       </div>
     );
