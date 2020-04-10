@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-// import App from './App';
+import './index.scss';
+import Nav from './components/Nav';
 import ClearSky from './components/ClearSky';
 import FewClouds from './components/FewClouds';
 import ScatteredClouds from './components/ScatteredClouds';
@@ -15,6 +15,7 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
+    <Nav />
     <ClearSky />
     <FewClouds />
     <ScatteredClouds />

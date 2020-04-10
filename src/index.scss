@@ -6,15 +6,17 @@ body {
 	flex-wrap: wrap;
 	padding: 0;
 	margin: 0;
-	background: #666;
 }
+
 .svg-container {
 	max-width: 500px;
 	max-height: 500px;
 }
+
 .sun {
 	animation: rasing 3s linear infinite;
 }
+
 @keyframes rasing {
 	from {
 		r: 0;
@@ -26,9 +28,9 @@ body {
 .rains {
 	animation: raining 1s linear infinite;
 	fill: #267bd9;
-}
-.rains:nth-child(2n) {
-	animation-delay: 0.5s;
+	&:nth-child(2n) {
+		animation-delay: 0.5s;
+	}
 }
 @keyframes raining {
 	from {
@@ -48,13 +50,14 @@ body {
 		fill: #646465;
 	}
 	50% {
-		fill: #c8c8c9;
+		fill: #646465 + 100;
 	}
 	100% {
 		transform: rotate(360deg);
 		fill: #646465;
 	}
 }
+
 .dark-clouds {
 	animation: clouds 2s linear infinite alternate;
 }
@@ -65,7 +68,7 @@ body {
 	}
 	to {
 		transform: translateX(20px);
-		fill: #4c4c4c;
+		fill: #565656 - 10;
 	}
 }
 .lightings {
@@ -81,75 +84,83 @@ body {
 }
 .mist {
 	animation: mist-move 3s ease infinite alternate;
-}
-.mist:nth-child(2n) {
-	animation-delay: 0.5s;
+	&:nth-child(2n) {
+		animation-delay: 0.5s;
+	}
 }
 @keyframes mist-move {
 	0% {
 		fill: #646465;
 	}
 	50% {
-		fill: #c8c8c9;
+		fill: #646465 + 100;
 	}
 	100% {
-		fill: #fafafb;
+		fill: #646465 + 150;
 	}
 }
+
+// nav
 header {
 	position: relative;
 	transition: all 0.5s ease;
 	width: 100%;
+	.nav-toggle {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 2;
+		display: grid;
+		span {
+			height: 8px;
+			width: 40px;
+			border: 1px solid #666;
+			margin: 3px;
+			background: #666;
+			transition: all 0.5s ease;
+			transform-origin: left;
+		}
+	}
+	nav {
+		position: fixed;
+		background: pink;
+		bottom: 0;
+		width: 0;
+		height: 100vh;
+		max-height: 100vh;
+		z-index: 1;
+		transition: all 0.5s ease;
+		ul {
+			list-style: none;
+			padding-left: 0;
+			position: relative;
+			text-align: center;
+			li {
+				a {
+					display: none;
+					width: 0;
+				}
+			}
+		}
+	}
 }
-header .nav-toggle {
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 2;
-	display: grid;
-}
-header .nav-toggle span {
-	height: 8px;
-	width: 40px;
-	border: 1px solid #666;
-	margin: 3px;
-	background: #666;
-	transition: all 0.5s ease;
-	transform-origin: left;
-}
-header nav {
-	position: fixed;
-	background: pink;
-	bottom: 0;
-	width: 0;
-	height: 100vh;
-	max-height: 100vh;
-	z-index: 1;
-	transition: all 0.5s ease;
-}
-header nav ul {
-	list-style: none;
-	padding-left: 0;
-	position: relative;
-	text-align: center;
-}
-header nav ul li a {
-	display: none;
-	width: 0;
-}
-.show .nav-toggle .top {
-	transform: rotate(45deg);
-}
-.show .nav-toggle .middle {
-	transform: translateX(10000000%);
-	opacity: 0;
-}
-.show .nav-toggle .bottom {
-	transform: rotate(-45deg);
-}
-.show nav {
-	width: 100%;
-}
-.show nav a {
-	display: unset;
+.show {
+	.nav-toggle {
+		.top {
+			transform: rotate(45deg);
+		}
+		.middle {
+			transform: translateX(10000000%);
+			opacity: 0;
+		}
+		.bottom {
+			transform: rotate(-45deg);
+		}
+	}
+	nav {
+		width: 100%;
+		a {
+			display: unset;
+		}
+	}
 }
