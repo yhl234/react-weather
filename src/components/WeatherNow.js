@@ -2,18 +2,11 @@
 import React from 'react';
 
 import WeatherIcons from './WeatherIcons';
-import FewClouds from './FewClouds';
-import ScatteredClouds from './ScatteredClouds';
-import BrokenClouds from './BrokenClouds';
-import ShowerRain from './ShowerRain';
-import Rain from './Rain';
-import Thunderstorm from './Thunderstorm';
-import Snow from './Snow';
-import Mist from './Mist';
 
 class WeatherNow extends React.Component {
   render() {
     const { data } = this.props;
+    const dateTime = data.dt_txt;
     const { main } = data;
     const { temp } = main;
     const feelsLike = main.feels_like;
@@ -29,6 +22,7 @@ class WeatherNow extends React.Component {
           <h3>{temp}&#176;C</h3>
           <p>Feel Like: {feelsLike}&#176;C</p>
           <p>{description}</p>
+          <p>{dateTime}</p>
         </div>
       </div>
     );

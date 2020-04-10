@@ -109,12 +109,29 @@ const data = {
 };
 
 class Weather extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { showMore: false };
+    this.toggleMore = this.toggleMore.bind(this);
+  }
+
+  toggleMore(e) {
+    console.log(e);
+    e.target.scrollIntoView({ behavior: 'smooth' });
+    this.setState(prevState => ({ showMore: !prevState.showMore }));
+  }
+
   render() {
+    const { showMore } = this.state;
     return (
       <div className="weather">
         <Location />
         <WeatherNow data={data.list[0]} />
-        <WeatherMore />
+        <WeatherMore
+          data={data.list}
+          toggleMore={this.toggleMore}
+          showMore={showMore}
+        />
       </div>
     );
   }

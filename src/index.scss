@@ -4,6 +4,7 @@
 body {
 	padding: 0;
 	margin: 0;
+	scroll-behavior: smooth;
 }
 .weatherMore {
 	display: flex;
@@ -182,6 +183,7 @@ header {
 	}
 
 	.weatherNow {
+		// height: 80vh;
 		display: grid;
 		grid-template-areas: "icon description";
 		grid-template-columns: 1fr 1fr;
@@ -203,4 +205,11 @@ header {
 	.weatherMore {
 		grid-area: more;
 	}
+}
+// weatherMore
+.weatherMore {
+	height: 0;
+}
+.showWeatherMore {
+	height: auto;
 }
