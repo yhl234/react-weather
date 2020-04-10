@@ -1,12 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+// import App from './App';
+import ClearSky from './components/ClearSky';
+import FewClouds from './components/FewClouds';
+import ScatteredClouds from './components/ScatteredClouds';
+import BrokenClouds from './components/BrokenClouds';
+import ShowerRain from './components/ShowerRain';
+import Rain from './components/Rain';
+import Thunderstorm from './components/Thunderstorm';
+import Snow from './components/Snow';
+import Mist from './components/Mist';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ClearSky />
+    <FewClouds />
+    <ScatteredClouds />
+    <BrokenClouds />
+    <ShowerRain />
+    <Rain />
+    <Thunderstorm />
+    <Snow />
+    <Mist />
   </React.StrictMode>,
   document.getElementById('root')
 );

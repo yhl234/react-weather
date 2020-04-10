@@ -1,13 +1,155 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+	box-sizing: border-box;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+	margin: 0;
+	background: #666;
+}
+.svg-container {
+	max-width: 500px;
+	max-height: 500px;
+}
+.sun {
+	animation: rasing 3s linear infinite;
+}
+@keyframes rasing {
+	from {
+		r: 0;
+	}
+	to {
+		r: 73.012;
+	}
+}
+.rains {
+	animation: raining 1s linear infinite;
+	fill: #267bd9;
+}
+.rains:nth-child(2n) {
+	animation-delay: 0.5s;
+}
+@keyframes raining {
+	from {
+		fill: #267bd9;
+	}
+	to {
+		fill: #8db0d6;
+	}
+}
+.snow {
+	animation: rotate 10s linear infinite;
+	transform-origin: center;
+}
+@keyframes rotate {
+	0% {
+		transform: rotate(0deg);
+		fill: #646465;
+	}
+	50% {
+		fill: #c8c8c9;
+	}
+	100% {
+		transform: rotate(360deg);
+		fill: #646465;
+	}
+}
+.dark-clouds {
+	animation: clouds 2s linear infinite alternate;
+}
+@keyframes clouds {
+	from {
+		transform: translateX(0px);
+		fill: #565656;
+	}
+	to {
+		transform: translateX(20px);
+		fill: #4c4c4c;
+	}
+}
+.lightings {
+	animation: lighting 1s ease infinite alternate;
+}
+@keyframes lighting {
+	from {
+		fill: #f4e39e;
+	}
+	to {
+		fill: #fc0;
+	}
+}
+.mist {
+	animation: mist-move 3s ease infinite alternate;
+}
+.mist:nth-child(2n) {
+	animation-delay: 0.5s;
+}
+@keyframes mist-move {
+	0% {
+		fill: #646465;
+	}
+	50% {
+		fill: #c8c8c9;
+	}
+	100% {
+		fill: #fafafb;
+	}
+}
+header {
+	position: relative;
+	transition: all 0.5s ease;
+	width: 100%;
+}
+header .nav-toggle {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	display: grid;
+}
+header .nav-toggle span {
+	height: 8px;
+	width: 40px;
+	border: 1px solid #666;
+	margin: 3px;
+	background: #666;
+	transition: all 0.5s ease;
+	transform-origin: left;
+}
+header nav {
+	position: fixed;
+	background: pink;
+	bottom: 0;
+	width: 0;
+	height: 100vh;
+	max-height: 100vh;
+	z-index: 1;
+	transition: all 0.5s ease;
+}
+header nav ul {
+	list-style: none;
+	padding-left: 0;
+	position: relative;
+	text-align: center;
+}
+header nav ul li a {
+	display: none;
+	width: 0;
+}
+.show .nav-toggle .top {
+	transform: rotate(45deg);
+}
+.show .nav-toggle .middle {
+	transform: translateX(10000000%);
+	opacity: 0;
+}
+.show .nav-toggle .bottom {
+	transform: rotate(-45deg);
+}
+.show nav {
+	width: 100%;
+}
+.show nav a {
+	display: unset;
 }
