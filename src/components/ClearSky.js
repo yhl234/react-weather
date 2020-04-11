@@ -10,6 +10,8 @@ class ClearSky extends React.Component {
         clipRule="evenodd"
         strokeLinejoin="round"
         strokeMiterlimit="2"
+        height="500"
+        width="500"
       >
         <path fill="none" d="M0 0h416.667v416.667H0z" />
         <circle

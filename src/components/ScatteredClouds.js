@@ -10,6 +10,8 @@ class ScatteredClouds extends React.Component {
         clipRule="evenodd"
         strokeLinejoin="round"
         strokeMiterlimit="2"
+        height="500"
+        width="500"
       >
         <path fill="none" d="M2.045 0h416.667v416.667H2.045z" />
         <path

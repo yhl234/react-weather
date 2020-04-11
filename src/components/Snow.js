@@ -10,6 +10,8 @@ class Snow extends React.Component {
         clipRule="evenodd"
         strokeLinejoin="round"
         strokeMiterlimit="2"
+        height="500"
+        width="500"
       >
         <path fill="none" d="M.908 0h416.667v416.667H.908z" />
         <g fill="#646465" className="snow">

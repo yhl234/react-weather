@@ -10,6 +10,8 @@ class Rain extends React.Component {
         clipRule="evenodd"
         strokeLinejoin="round"
         strokeMiterlimit="2"
+        height="500"
+        width="500"
       >
         <path fill="none" d="M3.03 0h416.667v416.667H3.03z" />
         <circle cx="255.01" cy="169.5" r="60.422" fill="#ec6e4c" />

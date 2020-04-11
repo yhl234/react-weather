@@ -10,6 +10,8 @@ class ShowerRain extends React.Component {
         clipRule="evenodd"
         strokeLinejoin="round"
         strokeMiterlimit="2"
+        height="500"
+        width="500"
       >
         <path fill="none" d="M4.091 0h416.667v416.667H4.091z" />
         <path

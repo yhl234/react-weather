@@ -10,6 +10,8 @@ class Mist extends React.Component {
         clipRule="evenodd"
         strokeLinejoin="round"
         strokeMiterlimit="2"
+        height="500"
+        width="500"
       >
         <path fill="none" d="M4.014 0h416.667v416.667H4.014z" />
         <g opacity=".5" fill="#646465">
