@@ -29,7 +29,7 @@ class Nav extends React.Component {
         <nav>
           <ul>
             <li>
-              <a>list</a>
+              Created By<a href="https://louislee.best/"> Louis</a>
             </li>
           </ul>
         </nav>

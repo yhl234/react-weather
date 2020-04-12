@@ -7,11 +7,11 @@ class WeatherMore extends React.Component {
   render() {
     const { data, showMore, toggleMore } = this.props;
     return (
-      <div>
-        <button type="button" onClick={toggleMore}>
+      <div className="weatherMore">
+        <button type="button" className="seeMore" onClick={toggleMore}>
           Show More
         </button>
-        <div className={`weatherMore ${showMore ? 'showWeatherMore' : ''}`}>
+        <div className={`mainMore ${showMore ? 'showWeatherMore' : ''}`}>
           {data.map((d, i) => (
             <div className="weatherContainer" key={i}>
               <div className="moreIcon">

@@ -889,9 +889,13 @@ class Weather extends React.Component {
     this.toggleMore = this.toggleMore.bind(this);
   }
 
-  toggleMore() {
-    // console.log(e);
-    // e.target.scrollIntoView({ behavior: 'smooth' });
+  toggleMore(e) {
+    console.log(e);
+    e.target.scrollIntoView({
+      behavior: 'smooth',
+      block: 'end',
+      inline: 'nearest',
+    });
     this.setState(prevState => ({ showMore: !prevState.showMore }));
   }
 
