@@ -1,5 +1,4 @@
 /* autoprefixer grid: autoplace */
-@import-normalize;
 * {
 	box-sizing: border-box;
 }
@@ -9,165 +8,14 @@ body {
 	scroll-behavior: smooth;
 	font-family: Arial, Helvetica, sans-serif;
 }
-
-.sun {
-	animation: rasing 3s linear infinite alternate;
-}
-
-@keyframes rasing {
-	from {
-		r: 15%;
-	}
-	to {
-		r: 20%;
-	}
-}
-.rains {
-	animation: raining 1s linear infinite;
-	fill: #267bd9;
-	&:nth-child(2n) {
-		animation-delay: 0.5s;
-	}
-}
-@keyframes raining {
-	from {
-		fill: #267bd9;
-	}
-	to {
-		fill: #8db0d6;
-	}
-}
-.snow {
-	animation: rotate 10s linear infinite;
-	transform-origin: center;
-}
-@keyframes rotate {
-	0% {
-		transform: rotate(0deg);
-		fill: #646465;
-	}
-	50% {
-		fill: #c8c8c9;
-	}
-	100% {
-		transform: rotate(360deg);
-		fill: #646465;
-	}
-}
-
-.dark-clouds {
-	animation: clouds 2s linear infinite alternate;
-}
-@keyframes clouds {
-	from {
-		transform: translateX(0px);
-		fill: #565656;
-	}
-	to {
-		transform: translateX(20px);
-		fill: #4c4c4c;
-	}
-}
-.lightings {
-	animation: lighting 1s ease infinite alternate;
-}
-@keyframes lighting {
-	from {
-		fill: #f4e39e;
-	}
-	to {
-		fill: #fc0;
-	}
-}
-.mist {
-	animation: mist-move 3s ease infinite alternate;
-	&:nth-child(2n) {
-		animation-delay: 0.5s;
-	}
-}
-@keyframes mist-move {
-	0% {
-		fill: #646465;
-	}
-	50% {
-		fill: #c8c8c9;
-	}
-	100% {
-		fill: #fafafb;
-	}
-}
-
-// nav
-header {
-	position: relative;
-	transition: all 0.5s ease;
-	width: 100%;
-	height: 50px;
-	.nav-toggle {
-		position: absolute;
-		top: 10px;
-		left: 10px;
-		z-index: 2;
-		display: grid;
-		span {
-			height: 8px;
-			width: 40px;
-			border: 1px solid #666;
-			margin: 3px;
-			background: #666;
-			transition: all 0.5s ease;
-			transform-origin: left;
-		}
-	}
-	nav {
-		position: fixed;
-		background: pink;
-		bottom: 0;
-		width: 0;
-		height: 100vh;
-		max-height: 100vh;
-		z-index: 1;
-		transition: all 0.5s ease;
-		ul {
-			display: none;
-			list-style: none;
-			padding-left: 0;
-			position: relative;
-			text-align: center;
-		}
-	}
-}
-.show {
-	.nav-toggle {
-		.top {
-			transform: rotate(45deg);
-		}
-		.middle {
-			opacity: 0;
-		}
-		.bottom {
-			transform: rotate(-45deg);
-		}
-	}
-	nav {
-		width: 50vh;
-		ul {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-		}
-	}
-}
 // weather
 .weather {
-	// max-width: 900px;
 	padding: 0 20px;
 	display: grid;
 	grid-template-areas:
 		"city "
 		"weatherNow"
 		"more ";
-	// grid-template-rows: auto 500px auto;
 	.city {
 		grid-area: city;
 		justify-self: center;
@@ -245,36 +93,6 @@ header {
 	.weatherMore {
 		display: grid;
 		justify-items: center;
-		.seeMore {
-			background: #267bd9;
-			color: white;
-			height: 50px;
-			width: 100px;
-			border-radius: 10px;
-			margin-bottom: 3rem;
-			@media screen and (min-width: 426px) {
-				animation: bounce 2s ease infinite;
-			}
-		}
-		@keyframes bounce {
-			0% {
-				transform: scale(1) translateY(0);
-				opacity: 0;
-			}
-			10% {
-				transform: scale(1.2, 0.6);
-			}
-			30% {
-				transform: scale(0.8, 1.1) translateY(-60px);
-			}
-			50% {
-				transform: scale(1) translateY(0);
-				opacity: 1;
-			}
-			100% {
-				transform: translateY(0);
-			}
-		}
 		grid-area: more;
 		justify-items: center;
 		.mainMore {
@@ -302,8 +120,6 @@ header {
 
 				&:hover {
 					box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.2);
-				}
-				.moreIcon {
 				}
 				.moreDescription {
 					p {
