@@ -5,7 +5,6 @@ class Location extends React.Component {
   constructor(props) {
     super(props);
     this.state = { isUpdating: false };
-
     this.update = this.update.bind(this);
   }
 

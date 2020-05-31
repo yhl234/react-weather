@@ -23,6 +23,7 @@ const Nav = ({ className }) => {
       </div>
       <nav>
         <ul>
+          <li>Build with React and Open Weather API</li>
           <li>
             Created By<a href="https://louislee.best/"> Louis</a>
           </li>
@@ -36,7 +37,8 @@ Nav.propTypes = {
 };
 
 export default styled(Nav)`
-  position: relative;
+  position: fixed;
+  height: 50px;
   transition: all 0.5s ease;
   width: 100%;
   height: 50px;
@@ -57,9 +59,9 @@ export default styled(Nav)`
     }
   }
   nav {
-    position: fixed;
+    position: absolute;
     background: pink;
-    bottom: 0;
+    top: 0;
     width: 0;
     height: 100vh;
     max-height: 100vh;
@@ -87,6 +89,7 @@ export default styled(Nav)`
     }
     nav {
       width: 50vh;
+      overflow: hidden;
       ul {
         display: flex;
         flex-direction: column;
