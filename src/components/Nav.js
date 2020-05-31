@@ -73,7 +73,7 @@ export default styled(Nav)`
       text-align: center;
     }
   }
-  .show {
+  &.show {
     .nav-toggle {
       .top {
         transform: rotate(45deg);
