@@ -1,14 +1,14 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import ClearSky from './ClearSky';
-import FewClouds from './FewClouds';
-import ScatteredClouds from './ScatteredClouds';
-import BrokenClouds from './BrokenClouds';
-import ShowerRain from './ShowerRain';
-import Rain from './Rain';
-import Thunderstorm from './Thunderstorm';
-import Snow from './Snow';
-import Mist from './Mist';
+import ClearSky from './svgs/ClearSky';
+import FewClouds from './svgs/FewClouds';
+import ScatteredClouds from './svgs/ScatteredClouds';
+import BrokenClouds from './svgs/BrokenClouds';
+import ShowerRain from './svgs/ShowerRain';
+import Rain from './svgs/Rain';
+import Thunderstorm from './svgs/Thunderstorm';
+import Snow from './svgs/Snow';
+import Mist from './svgs/Mist';
 
 class WeatherIcons extends React.Component {
   render() {

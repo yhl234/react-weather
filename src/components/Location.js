@@ -25,7 +25,7 @@ class Location extends React.Component {
         <div className={isUpdating ? 'loader' : ''}></div>
         <p className={isUpdating ? 'hide' : ''}>
           click{' '}
-          <a href="#" onClick={this.update} role="button" tabIndex={0}>
+          <a href="/" onClick={this.update} role="button" tabIndex={0}>
             here
           </a>{' '}
           to update

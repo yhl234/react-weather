@@ -5,13 +5,10 @@ import WeatherIcons from './WeatherIcons';
 
 class WeatherMore extends React.Component {
   render() {
-    const { data, showMore, toggleMore } = this.props;
+    const { data } = this.props;
     return (
       <div className="weatherMore">
-        <button type="button" className="seeMore" onClick={toggleMore}>
-          Show More
-        </button>
-        <div className={`mainMore ${showMore ? 'showWeatherMore' : ''}`}>
+        <div className="mainMore showWeatherMore">
           {data.map((d, i) => (
             <div className="weatherContainer" key={i}>
               <div className="moreIcon">
