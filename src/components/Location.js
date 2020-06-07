@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 
@@ -18,9 +19,10 @@ class Location extends React.Component {
 
   render() {
     const { isUpdating } = this.state;
+    const { city } = this.props;
     return (
       <div className="city">
-        <h3>Toronto</h3>
+        <h3>{city}</h3>
         <div className={isUpdating ? 'loader' : ''}></div>
         <p className={isUpdating ? 'hide' : ''}>
           click{' '}

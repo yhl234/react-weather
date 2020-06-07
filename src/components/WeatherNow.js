@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
 import React from 'react';
 
@@ -12,6 +13,7 @@ class WeatherNow extends React.Component {
     const feelsLike = main.feels_like;
     const { description } = data.weather[0];
     const { icon } = data.weather[0];
+    console.log(data);
 
     return (
       <div className="weatherNow">
