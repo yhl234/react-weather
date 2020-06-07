@@ -45,13 +45,13 @@ class Weather extends React.Component {
 
   render() {
     const { weatherList, city, isLoading } = this.state;
-    let weather = <Loader />;
+    let weather = <Loader className="weatherNow" />;
     if (!isLoading) {
       weather = (
         <>
-          <Location city={city} />
-          <WeatherNow data={weatherList[0]} />
-          <WeatherMore data={weatherList} />
+          <Location city={city} className="city" />
+          <WeatherNow data={weatherList[0]} className="weatherNow" />
+          <WeatherMore data={weatherList} className="weatherMore" />
         </>
       );
     }

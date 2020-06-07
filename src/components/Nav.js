@@ -23,9 +23,9 @@ const Nav = ({ className }) => {
       </div>
       <nav>
         <ul>
-          <li>Build with React and Open Weather API</li>
+          <li>Built with React and Open Weather API</li>
           <li>
-            Created By<a href="https://louislee.best/"> Louis</a>
+            Created By<a href="https://yhl234.netlify.app/"> Louis</a>
           </li>
         </ul>
       </nav>

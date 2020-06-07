@@ -1,22 +1,23 @@
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 import WeatherIcons from './WeatherIcons';
 
 class WeatherNow extends React.Component {
   render() {
-    const { data } = this.props;
-    const dateTime = data.dt_txt;
-    const { main } = data;
-    const { temp } = main;
-    const feelsLike = main.feels_like;
-    const { description } = data.weather[0];
-    const { icon } = data.weather[0];
-    console.log(data);
+    const {
+      data: {
+        dt_txt: dateTime,
+        main: { temp, feels_like: feelsLike },
+        weather,
+      },
+      className,
+    } = this.props;
+    const { description, icon } = weather[0];
 
     return (
-      <div className="weatherNow">
+      <div className={className}>
         <div className="nowIcon">
           <WeatherIcons icon={icon} />
         </div>
@@ -30,4 +31,42 @@ class WeatherNow extends React.Component {
     );
   }
 }
-export default WeatherNow;
+
+WeatherNow.propTypes = {
+  data: PropTypes.object,
+  className: PropTypes.string,
+};
+
+export default styled(WeatherNow)`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  .nowIcon {
+    max-height: 450px;
+    .svg-container {
+      svg {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+  .nowDescription {
+    max-height: 450px;
+    flex-basis: 40%;
+    align-self: center;
+    text-align: center;
+    h3 {
+      font-size: 500%;
+      margin: 0;
+    }
+    p {
+      &:first-child {
+        color: grey;
+        font-size: 80%;
+      }
+      &:last-child {
+        text-transform: capitalize;
+      }
+    }
+  }
+`;
